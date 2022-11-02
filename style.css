@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.post{
+    padding: 40px;
+}
+.title{
+    font-size: 50px;
+    text-decoration: underline;
+}
+.username{
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 80px;
+}
+.date{
+    float: right;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+.description{
+    margin-top: 50px;
+    font-size: 16px;
+
+}
+.heading{
+    margin-top: 10px;
+}
+.inp{
+    margin-top: 40px;
+}
+
+form .fields{
+    display: flex;
+}
+form .field,
+form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+form .textarea{
+    height: 80px;
+    width: 100%;
+}
+form .name{
+    margin-right: 10px;
+}
+form .email{
+    margin-left: 10px;
+}
+form .field input,
+form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+ form .button{
+    height: 47px;
+    width: 170px;
+}
+ form .button button{
+    height: 100%;
+    width: 100%;
+    border: 2px solid crimson;
+    background-color: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+form .button button:hover{
+    color: crimson;
+    background: none;
+}

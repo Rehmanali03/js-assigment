@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center heading">Type your post</h1>
+    <hr>
+ <div class="container inp">
+    <form>
+        <div class="fields">
+         <div class="field name">
+             <input type="text" name="Name" id="inp-postname" placeholder="Post Name" required>
+         </div>
+         <div class="field email">
+             <input type="text" name="email" id="inp-username" placeholder="username" required>
+         </div>
+        </div>
+        <div class="fields">
+            <div class="field date">
+                <input type="date" name="date" id="inpdate" placeholder="Date" required>
+               </div>
+            <div class="field time">
+               <input type="time" name="time" id="inptime" placeholder="Time" required>
+            </div>
+        </div>
+     <div class="field textarea">
+        <textarea cols="30" id="inp-description" name="description" rows="10" placeholder="Describe Post.." required></textarea>
+     </div>
+     <div class="button">
+         <button type="submit" onclick="addItem()">Publish</button>
+     </div>
+     </form>
+ </div>
+
+    <div class="posts">
+        <div class="post container" id="print-postname">
+            <h1 class="title text-center" id="print-username">JavaScript</h1>
+            <h3 class="username" id="printdate">Rehman Ali</h3>
+            <h5 class="date" id="printtime">Date: 3/11/2022 7:50</h5>
+            <p class="description" id="print-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, natus quo! Doloremque harum aspernatur molestiae facilis eum labore accusantium tenetur eligendi iure dolore minima, ab perspiciatis reprehenderit, consequuntur quibusdam alias! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquid, vel odio amet reprehenderit porro doloribus exercitationem inventore provident, nam vitae qui autem. Modi rem cumque eum! Praesentium, dignissimos voluptatem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis aliquid corporis non, cumque alias optio temporibus! Iste corporis necessitatibus ipsa. Doloremque asperiores officia perferendis! Exercitationem cumque fugiat dolor cupiditate dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reiciendis adipisci nam sapiente explicabo inventore dolores illo, fugiat molestiae iste facere nemo impedit nobis ipsam sit illum? Corporis, cupiditate recusandae.</p>
+        </div>
+    </div>
+
+
+        
+    <script>
+        function addItem(){
+
+            // Data Get
+            const inp_postName = document.querySelector('#inp-postname');
+            const inp_userName = document.querySelector('#inp-username');
+            const inp_date = document.querySelector('#inpdate');
+            const inp_time = document.querySelector('#inptime');
+            const inp_description = document.querySelector('#inp-description');
+
+            // Data print
+            const print_postName = document.querySelector('#print-postname');
+            const print_userName = document.querySelector('#print-username');
+            const print_date = document.querySelector('#printdate');
+            const print_time = document.querySelector('#printtime');
+            const print_description = document.querySelector('#print-description');
+            
+            const print_div = document.getElementById('posts');
+
+            const myarry = [inp_postName, inp_userName, inp_date, inp_time, inp_description];
+
+            // for(let li of ul_items.children){
+            //     if(li.innerText == input_item.value){
+            //         alert('item already exists')
+            //         return;
+            //     }
+            // }
+                
+            let li_itemToAdd = document.createElement('DIV');
+            let text = document.createTextNode(myarry.value);
+            
+            li_itemToAdd.append(text)
+            
+            ul_items.append(li_itemToAdd)
+
+
+        }
+    </script>
+</body>
+</html>
