@@ -21,14 +21,6 @@
              <input type="text" name="email" id="inp-username" placeholder="username" required>
          </div>
         </div>
-        <div class="fields">
-            <div class="field date">
-                <input type="date" name="date" id="inpdate" placeholder="Date" required>
-               </div>
-            <div class="field time">
-               <input type="time" name="time" id="inptime" placeholder="Time" required>
-            </div>
-        </div>
      <div class="field textarea">
         <textarea cols="30" id="inp-description" name="description" rows="10" placeholder="Describe Post.." required></textarea>
      </div>
@@ -39,72 +31,55 @@
  </div>
 
     <div class="posts">
-        <div class="post container" id="print-postname">
-            <h1 class="title text-center" id="print-username">JavaScript</h1>
-            <h3 class="username" id="printdate">Rehman Ali</h3>
-            <h5 class="date" id="printtime">Date: 3/11/2022 7:50</h5>
-            <p class="description" id="print-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, natus quo! Doloremque harum aspernatur molestiae facilis eum labore accusantium tenetur eligendi iure dolore minima, ab perspiciatis reprehenderit, consequuntur quibusdam alias! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquid, vel odio amet reprehenderit porro doloribus exercitationem inventore provident, nam vitae qui autem. Modi rem cumque eum! Praesentium, dignissimos voluptatem? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis aliquid corporis non, cumque alias optio temporibus! Iste corporis necessitatibus ipsa. Doloremque asperiores officia perferendis! Exercitationem cumque fugiat dolor cupiditate dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reiciendis adipisci nam sapiente explicabo inventore dolores illo, fugiat molestiae iste facere nemo impedit nobis ipsam sit illum? Corporis, cupiditate recusandae.</p>
-        </div>
+   
     </div>
 
-
-        
     <script>
         function addItem(){
 
             // Data Get
-            const inp_postName = document.querySelector('#inp-postname').value;
-            const inp_userName = document.querySelector('#inp-username').value;
-            const inp_date = document.querySelector('#inpdate').value;
-            const inp_time = document.querySelector('#inptime').value;
-            const inp_description = document.querySelector('#inp-description').value;
-
-            // Data print
-            const print_postName = document.querySelector('#print-postname');
-            const print_userName = document.querySelector('#print-username');
-            const print_date = document.querySelector('#printdate');
-            const print_time = document.querySelector('#printtime');
-            const print_description = document.querySelector('#print-description');
+            const inp_postName = document.querySelector('#inp-postname');
+            const inp_userName = document.querySelector('#inp-username');
+            const inp_description = document.querySelector('#inp-description');
             
             const print_div = document.getElementById('posts');
+            let date_str = `${date_now.getFullYear()}-${date_now.getMonth()+1}-${date_now.getDate()}`;
 
+            // Data Print
 
-            // for(let li of ul_items.children){
-            //     if(li.innerText == input_item.value){
-            //         alert('item already exists')
-            //         return;
-            //     }
-            // }
-                
             let div_post = document.createElement('DIV');
-            div_post.classList.add('description')
+            div_post.classList.add('post')
 
             let h1_title = document.createElement('H1');
-            h1_title.classList.add('title')
-            let text_title = document.createTextNode(inp_postName);
-            h1_title.append(text_title)
+            h3_title.classList.add('title')
+            let text_title = document.createTextNode(inp_postName.value);
+            h3_title.append(text_title)
 
-            let h3_username = document.createElement('H3');
-            h3_username.classList.add('username')
-            let text_username = document.createTextNode(inp_userName);
-            h3_username.append(text_username)
+            let h3_userName = document.createElement('H3');
+            h3_userName.classList.add('username')
+            let text_userName = document.createTextNode(inp_userName.value);
+            h3_userName.append(text_userName)
 
-            let h5_date = document.createElement('H5');
-            h5_date.classList.add('date')
-            let text_date = document.createTextNode(inp_date);
-            h5_date.append(text_date)
+            let span_date = document.createElement('SPAN');
+            span_date.classList.add('date')
+            let text_date = document.createTextNode(date_str);
+            span_date.append(text_date)
 
             let p_desc = document.createElement('P');
-            p_desc.classList.add('description21')
-            let text_desc = document.createTextNode(inp_description);
-            h3_username.append(text_desc)
-            
-            div_post.append(h1_title)
-            div_post.append(h3_username)
-            div_post.append(h5_date)
-            div_post.append(p_desc)
+            p_desc.classList.add('description')
+            let text_desc = document.createTextNode(inp_description.value);
+            p_desc.append(text_desc);
+        
+            div_post.append(h1_title);
+            div_post.append(h3_userName);
+            div_post.append(span_date);
+            div_post.append(p_desc);
+        
+            print_div.append(div_post);
 
-            print_date.append(div_post)
+            inp_postName = "";
+            inp_description = "";
+            inp_userName = "";
 
         }
     </script>
