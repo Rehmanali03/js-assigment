@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: #6e8a37;
+  }
+  table{
+    position: relative;
+    left: 700px;
+    bottom: 350px;
+    width: 600px;
+    height: 50px;
+  }
+  select{
+    height: 40px;
+  }
+  input{
+    width: 500px;
+    height: 40px;
+  }
+</style>
+<body>
+   <div id="main">
+    <h2>STUDENT FORM</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <br>
+    <input type="text" id="email" placeholder="Enter Email">
+    <br>
+    <select name="" id="city">
+        <option value="">Select</option>
+        <option value="karachi">Karachi</option>
+        <option value="lahore">Lahore</option>
+        <option value="islamabad">islamabad</option>
+    </select>
+   <br>
+   <input type="number" id="html" placeholder="Html Marks">
+    <br>
+   <input type="number" id="css" placeholder="Css Marks">
+   <br>
+   <input type="number" id="js" placeholder="javascript Marks">
+   <br>
+   <input type="number" id="ui" placeholder="Ui/Ux Marks">
+   <br>
+   <button id="btn" type="submit" onclick="myfunc();">Submit</button>
+   </div>
+   <br><br>
+
+   <div id="tbl">
+    <table border="2px solid">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Html</th>
+        <th>Css</th>
+        <th>javascript</th>
+        <th>UI/UX</th>
+        <th>Total Numbers</th>
+      </tr>
+     <tbody id="tblprint">
+      
+     </tbody>
+    </table>
+
+   </div>
+
+   <script>
+    //set margin to the input tags
+    var col = document.getElementsByTagName('input');
+    var tblprint = document.querySelector('#tblprint')
+    for(var i =0; i < col.length; i++){
+  document.getElementsByTagName('input')[i].style.margin = '10px';
+  //document.getElementsByTagName('input')[i].style.color = 'skyblue';
+    }
+    document.getElementById('city').style.margin = '10px';
+    document.getElementById('city').style.width = '170px';
+
+  //button styling
+   document.getElementById('btn').style.margin = '10px 50px';
+   document.getElementById('btn').style.background = 'darkgreen';
+   document.getElementById('btn').style.color = 'white';
+   document.getElementById('btn').style.width = '80px';
+   document.getElementById('btn').style.borderColor = 'green';
+
+   //data get
+
+   function myfunc(){
+
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var city = document.getElementById('city').value;
+    var htmlMarks = document.getElementById('html').value;
+    var cssMarks = document.getElementById('css').value;
+    var jsMarks = document.getElementById('js').value;
+    var uiMarks = document.getElementById('ui').value;
+
+//show data in table
+
+    let tr_add = document.createElement('TR');
+
+    let inp_name = document.createElement('TD');
+    let text_name = document.createTextNode(name);
+    inp_name.append(text_name)
+
+    let inp_email = document.createElement('TD');
+    let text_email = document.createTextNode(email);
+    inp_email.append(text_email)
+
+    let inp_city = document.createElement('TD');
+    let text_city = document.createTextNode(city);
+    inp_city.append(text_city);
+
+    let inp_html = document.createElement('TD');
+    let text_htmlMarks = document.createTextNode(htmlMarks);
+    inp_html.append(text_htmlMarks);
+
+    let inp_css = document.createElement('TD');
+    let text_cssMarks = document.createTextNode(cssMarks);
+    inp_css.append(text_cssMarks);
+
+    let inp_js = document.createElement('TD');
+    let text_jsMarks = document.createTextNode(jsMarks);
+    inp_js.append(text_jsMarks);
+
+    let inp_ui = document.createElement('TD');
+    let text_uiMarks = document.createTextNode(uiMarks);
+    inp_ui.append(text_uiMarks);
+
+    let inp_total = document.createElement('TD');
+    let text_totalMarks = document.createTextNode(parseInt(htmlMarks) + parseInt(cssMarks) + parseInt(jsMarks) + parseInt(uiMarks));
+    inp_total.append(text_totalMarks);
+
+    console.log(inp_total)
+
+    tr_add.append(inp_name);
+    tr_add.append(inp_email);
+    tr_add.append(inp_city);
+    tr_add.append(inp_html);
+    tr_add.append(inp_css);
+    tr_add.append(inp_js);
+    tr_add.append(inp_ui);
+    tr_add.append(inp_total);
+
+    tblprint.append(tr_add);
+
+    if(C == 'karachi'){
+      document.getElementById('city1').style.backgroundColor = 'red';
+      document.getElementById('city1').style.color = 'white';
+    }
+    if(C == 'lahore'){
+      document.getElementById('city1').style.backgroundColor = 'purple';
+      document.getElementById('city1').style.color = 'white';
+    }
+    if(C == 'islamabad'){
+      document.getElementById('city1').style.backgroundColor = 'green';
+      document.getElementById('city1').style.color = 'white';
+    }
+
+    
+    name.value = "";
+    email.value = "";
+    city.value = "";
+    htmlMarks.value = "";
+    cssMarks.value = "";
+    jsMarks.value = "";
+    uiMarks.value = "";
+
+   }
+   </script>
+</body>
+</html>
