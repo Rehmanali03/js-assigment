@@ -53,11 +53,11 @@
         function addItem(){
 
             // Data Get
-            const inp_postName = document.querySelector('#inp-postname');
-            const inp_userName = document.querySelector('#inp-username');
-            const inp_date = document.querySelector('#inpdate');
-            const inp_time = document.querySelector('#inptime');
-            const inp_description = document.querySelector('#inp-description');
+            const inp_postName = document.querySelector('#inp-postname').value;
+            const inp_userName = document.querySelector('#inp-username').value;
+            const inp_date = document.querySelector('#inpdate').value;
+            const inp_time = document.querySelector('#inptime').value;
+            const inp_description = document.querySelector('#inp-description').value;
 
             // Data print
             const print_postName = document.querySelector('#print-postname');
@@ -68,7 +68,6 @@
             
             const print_div = document.getElementById('posts');
 
-            const myarry = [inp_postName, inp_userName, inp_date, inp_time, inp_description];
 
             // for(let li of ul_items.children){
             //     if(li.innerText == input_item.value){
@@ -77,13 +76,35 @@
             //     }
             // }
                 
-            let li_itemToAdd = document.createElement('DIV');
-            let text = document.createTextNode(myarry.value);
-            
-            li_itemToAdd.append(text)
-            
-            ul_items.append(li_itemToAdd)
+            let div_post = document.createElement('DIV');
+            div_post.classList.add('description')
 
+            let h1_title = document.createElement('H1');
+            h1_title.classList.add('title')
+            let text_title = document.createTextNode(inp_postName);
+            h1_title.append(text_title)
+
+            let h3_username = document.createElement('H3');
+            h3_username.classList.add('username')
+            let text_username = document.createTextNode(inp_userName);
+            h3_username.append(text_username)
+
+            let h5_date = document.createElement('H5');
+            h5_date.classList.add('date')
+            let text_date = document.createTextNode(inp_date);
+            h5_date.append(text_date)
+
+            let p_desc = document.createElement('P');
+            p_desc.classList.add('description21')
+            let text_desc = document.createTextNode(inp_description);
+            h3_username.append(text_desc)
+            
+            div_post.append(h1_title)
+            div_post.append(h3_username)
+            div_post.append(h5_date)
+            div_post.append(p_desc)
+
+            print_date.append(div_post)
 
         }
     </script>
